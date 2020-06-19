@@ -32,6 +32,7 @@ const server = new ApolloServer({
   engine: {
     reportSchema: true,
   },
+  introspection: true,
   context: async ({ req }) => {
     try {
       const token = req.headers.authorization.replace("Bearer ", "");

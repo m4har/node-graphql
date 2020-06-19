@@ -8,9 +8,13 @@ import { verify } from "jsonwebtoken";
 import { users } from "./mongo/models";
 import { resolver, type } from "./graphql";
 
-mongoose.connect("mongodb://mahardicka:developer@localhost:27017", {
-  dbName: "test",
-});
+mongoose.connect(
+  `mongodb+srv://mahardicka:${process.env.PASSWORD_MONGO}@cluster0-hcoxl.gcp.mongodb.net/office?retryWrites=true&w=majority`,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 const PORT = process.env.PORT || 5000;
 const SECRET_KEY = process.env.SECRET_KEY;
 const app = express();

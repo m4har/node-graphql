@@ -5,6 +5,9 @@ import { sign } from "jsonwebtoken";
 import { users, roles, tenants } from "../mongo/models";
 import userBuilder from "../builder/user/userBuilder";
 import tenantBuilder from "../builder/tenant/tenantBuilder";
+
+const SECRET_KEY = process.env.SECRET_KEY || "m*GGn!z3m*";
+
 export const resolver = {
   Query: {
     foo: () => "bar",

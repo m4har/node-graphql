@@ -1,0 +1,12 @@
+
+Todo:
+  ✔ learn grahql @done(20-06-19 13:11)
+  ✔ auth jwt @done(20-06-19 13:11)
+  ✔ Superadmin, admin, director, head of engineering, operator @done(20-06-19 15:20)
+  ✔ get all users @done(20-06-19 15:20)
+  ✔ get user by id @done(20-06-19 15:40)
+  ✔ create update only superAdmin @done(20-06-19 15:20)
+  ✔ edit user only super @done(20-06-19 17:54)
+  ✔ admin cant make new admin @done(20-06-19 17:54)
+  ✔ all can add new tenant @done(20-06-19 20:11)
+  ✔ delete users @done(20-06-19 21:15)

@@ -16,7 +16,7 @@ mongoose.connect(
   }
 );
 const PORT = process.env.PORT || 5000;
-const SECRET_KEY = process.env.SECRET_KEY;
+const SECRET_KEY = process.env.SECRET_KEY || "m*GGn!z3m*";
 const app = express();
 const typeDefs = gql`
   ${type}

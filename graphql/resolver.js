@@ -20,7 +20,7 @@ export const resolver = {
         users.findOne({
           _id: context.id,
         }),
-        users.length,
+        users.find().then((data) => data.length),
         tenants.find({ idUsers: context.id }).then((data) => data.length),
       ]);
       return {
@@ -80,7 +80,9 @@ export const resolver = {
         .setEmail(data.email)
         .setPassword(password)
         .setRole(data.role)
-        .setPhoto("")
+        .setPhoto(
+          "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
+        )
         .build();
       const newUser = new users(build);
       await newUser.save();

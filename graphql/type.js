@@ -7,6 +7,7 @@ type AuthPayload {
 type Tenant {
   name: String
   from: String
+  email: String
 }
 type Profile {
   name: String
@@ -35,6 +36,7 @@ type Query {
   allUser: [User]
   user(id: String): User
   role:[Role]
+  tenant:[Tenant]
 }
 type Mutation {
   loginUser(email: String!, password: String!): AuthPayload

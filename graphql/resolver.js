@@ -40,6 +40,12 @@ export const resolver = {
       const all = await users.find();
       return all;
     },
+    //get my tenant
+    tenant: async (_, data, context) => {
+      if (!context.valid) throw new AuthenticationError("need login");
+      const myTenant = await tenants.find({ idUsers: context.id });
+      return myTenant;
+    },
     // find user
     user: async (_, data, context) => {
       if (!context.valid) throw new AuthenticationError("need login");

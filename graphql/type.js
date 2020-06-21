@@ -14,6 +14,8 @@ type Profile {
   email: String
   role: String
   tenant: [Tenant]
+  myTenant: Int
+  allUsers: Int
 }
 type User {
   id: String

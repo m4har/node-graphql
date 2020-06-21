@@ -16,10 +16,14 @@ export const resolver = {
       if (!context.valid) {
         throw new AuthenticationError("need login");
       }
-      const myProfile = await users.findOne({
-        _id: context.id,
-      });
-      return myProfile;
+      const [myProfile, usersLength, tenantsLength] = await Promise.all([
+        users.findOne({
+          _id: context.id,
+        }),
+        users.length,
+        tenants.find({ idUsers: context.d }).then((data) => data.length),
+      ]);
+      return { ...myProfile, allUsers: usersLength, myTenant: tenantsLength };
     },
     // get all users profile
     allUser: async (_, data, context) => {

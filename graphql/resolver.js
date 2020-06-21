@@ -21,7 +21,7 @@ export const resolver = {
           _id: context.id,
         }),
         users.length,
-        tenants.find({ idUsers: context.d }).then((data) => data.length),
+        tenants.find({ idUsers: context.id }).then((data) => data.length),
       ]);
       console.log({ myProfile });
       return {

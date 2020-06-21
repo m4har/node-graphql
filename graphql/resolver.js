@@ -23,7 +23,15 @@ export const resolver = {
         users.length,
         tenants.find({ idUsers: context.d }).then((data) => data.length),
       ]);
-      return { ...myProfile, allUsers: usersLength, myTenant: tenantsLength };
+      console.log({ myProfile });
+      return {
+        allUsers: usersLength,
+        myTenant: tenantsLength,
+        name: myProfile.name,
+        photo: myProfile.photo,
+        email: myProfile.email,
+        role: myProfile.role,
+      };
     },
     // get all users profile
     allUser: async (_, data, context) => {

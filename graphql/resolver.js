@@ -23,7 +23,6 @@ export const resolver = {
         users.length,
         tenants.find({ idUsers: context.id }).then((data) => data.length),
       ]);
-      console.log({ myProfile });
       return {
         allUsers: usersLength,
         myTenant: tenantsLength,
@@ -46,6 +45,11 @@ export const resolver = {
       if (!context.valid) throw new AuthenticationError("need login");
       const findUser = await users.findById(data.id).catch(() => ({}));
       return findUser;
+    },
+    role: async (_, data, context) => {
+      if (!context.valid) throw new AuthenticationError("need login");
+      const allRrole = await roles.find();
+      return allRrole;
     },
   },
   Mutation: {

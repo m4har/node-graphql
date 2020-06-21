@@ -17,6 +17,10 @@ type Profile {
   myTenant: Int
   allUsers: Int
 }
+type Role {
+  role: String
+  id: String
+}
 type User {
   id: String
   name: String
@@ -30,6 +34,7 @@ type Query {
   profile: Profile
   allUser: [User]
   user(id: String): User
+  role:[Role]
 }
 type Mutation {
   loginUser(email: String!, password: String!): AuthPayload

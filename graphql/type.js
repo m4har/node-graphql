@@ -39,8 +39,8 @@ type Mutation {
     password: String
     role: String
   ): String
-  editUser(id: String, name: String, role: String): String
-  addTenant(name: String, from: String, email: String): String
-  deleteUser(id:String):String
+  editUser(id: String!, name: String!, role: String!): String
+  addTenant(name: String!, from: String!, email: String!): String
+  deleteUser(id:String!):String
 }
 `;
